@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CryptoModule.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace CryptoModule
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddScoped<IAPIService, APIService>();
         }
     }
 }
