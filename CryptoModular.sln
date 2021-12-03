@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoWeb", "CryptoWeb\CryptoWeb.csproj", "{9230F2B0-1DE7-45BF-9332-8EF110748083}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoModule", "CryptoModule\CryptoModule.csproj", "{C021E8F8-5134-4341-A331-082F58FAC721}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9230F2B0-1DE7-45BF-9332-8EF110748083}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9230F2B0-1DE7-45BF-9332-8EF110748083}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9230F2B0-1DE7-45BF-9332-8EF110748083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C021E8F8-5134-4341-A331-082F58FAC721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C021E8F8-5134-4341-A331-082F58FAC721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C021E8F8-5134-4341-A331-082F58FAC721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C021E8F8-5134-4341-A331-082F58FAC721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
