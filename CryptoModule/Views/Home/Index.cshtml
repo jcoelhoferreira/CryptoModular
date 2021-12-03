@@ -1,7 +1,96 @@
-﻿@{
+﻿@model CryptoModule.Models.Crypto
+
+@{
+    ViewData["Title"] = "Index";
     Layout = "_Layout";
 }
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" />
 
 <div class="alert alert-success" role="alert">
     <center><h6>@ViewBag.Message</h6></center>
 </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Crypto Market info real time</h3><h6 class="panel-title">@DateTime.Now.ToString("MM/dd/yyyy HH:mm")</h6>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-responsive table-striped" id="MyTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Data[0].Cmc_rank)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Data[0].Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Data[0].Symbol)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Data[0].Quote.USD.Price)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Data[0].Quote.USD.Percent_change_24h)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Data[0].Quote.USD.Percent_change_7d)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Data[0].Quote.USD.Market_cap)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Data[0].Quote.USD.Volume_24h)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Data)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cmc_rank)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Symbol)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quote.USD.Price)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quote.USD.Percent_change_24h)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quote.USD.Percent_change_7d)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quote.USD.Market_cap)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quote.USD.Volume_24h)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{ 
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#MyTable').DataTable();
+        });
+    </script>
+}
